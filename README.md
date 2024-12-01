@@ -24,12 +24,11 @@ A simple and engaging **Memory Game** built with JavaScript, HTML, and CSS. This
 ## 🚀 Getting Started
 
 1. Clone the Repository
-```bash
+```
 git clone https://github.com/your-username/memory-game.git
-cd memory-game
 ```
 2. Navigate to the project directory:
-```bash
+```
 cd memory-game
 ```
 3. Open the `index.html` file in any modern web browser to start playing.
