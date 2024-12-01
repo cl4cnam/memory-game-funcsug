@@ -27,10 +27,29 @@ document.addEventListener("DOMContentLoaded", function () {
     function createBoard() {
         grid.innerHTML = "";
         for (let i = 0; i < cardArray.length; i++) {
-            const card = document.createElement("img");
-            card.setAttribute("src", "images/blank.png");
-            card.setAttribute("data-id", i);
+            const card = document.createElement("div");
+
             card.classList.add("card");
+            card.setAttribute("data-id", i);
+
+            const cardInner = document.createElement("div");
+            cardInner.classList.add("card-inner");
+
+            const cardFront = document.createElement("div");
+            cardFront.classList.add("card-front");
+
+            const cardBack = document.createElement("div");
+            cardBack.classList.add("card-back");
+            const cardImage = document.createElement("img");
+            cardImage.src = cardArray[i].img;
+            cardImage.alt = cardArray[i].name;
+            cardBack.appendChild(cardImage);
+
+            cardInner.appendChild(cardFront);
+            cardInner.appendChild(cardBack);
+
+            card.appendChild(cardInner);
+
             card.addEventListener("click", flipCard);
             grid.appendChild(card);
         }
@@ -38,20 +57,20 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function checkForMatch() {
-        const cards = document.querySelectorAll("img");
+        const cards = document.querySelectorAll(".card");
         const [optionOneId, optionTwoId] = cardsChosenId;
 
         if (optionOneId === optionTwoId) {
-            cards[optionOneId].setAttribute("src", "images/blank.png");
+            cards[optionOneId].classList.remove("flipped");
         } else if (cardsChosen[0] === cardsChosen[1]) {
-            cards[optionOneId].setAttribute("src", "images/white.png");
-            cards[optionTwoId].setAttribute("src", "images/white.png");
             cards[optionOneId].removeEventListener("click", flipCard);
             cards[optionTwoId].removeEventListener("click", flipCard);
             cardsWon.push(cardsChosen);
         } else {
-            cards[optionOneId].setAttribute("src", "images/blank.png");
-            cards[optionTwoId].setAttribute("src", "images/blank.png");
+            setTimeout(() => {
+                cards[optionOneId].classList.remove("flipped");
+                cards[optionTwoId].classList.remove("flipped");
+            }, 100);
         }
 
         cardsChosen = [];
@@ -73,7 +92,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (!cardsChosenId.includes(cardId)) {
             cardsChosen.push(cardArray[cardId].name);
             cardsChosenId.push(cardId);
-            this.setAttribute("src", cardArray[cardId].img);
+            this.classList.add("flipped");
 
             if (cardsChosen.length === 2) {
                 lockBoard = true;
