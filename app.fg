@@ -1,0 +1,35 @@
+var cardArray := calljs init()
+
+while true:
+	js (cardArray):
+		document.getElementById('result').textContent = "0"
+		cardArray.sort(() => Math.random() - 0.5)
+	calljs createBoard(cardArray)
+	var cards := js ():
+		return [...document.querySelectorAll(".card")]
+
+	var allRemainingCards := listToPar(cards)
+	js (allRemainingCards):
+		allRemainingCards.classList.remove("flipped")
+		allRemainingCards.img = allRemainingCards.querySelector("img").src
+
+	while not isNovalue(allRemainingCards):
+		var allClickedCards := parallel(for anyCard in allRemainingCards, select 2):
+			select:
+				awaitClickBeep(anyCard)
+			do:
+				js (anyCard):
+					anyCard.classList.add("flipped")
+				anyCard
+		waitSeconds(0.5)
+		if allEqual(allClickedCards.img):
+			allRemainingCards := valuesFrom(allRemainingCards, 'butNotFrom', allClickedCards)
+			js ():
+				document.getElementById('result').textContent = parseInt(document.getElementById('result').textContent) + 1
+		else:
+			waitSeconds(0.1)
+			js (allClickedCards):
+				allClickedCards.classList.remove("flipped")
+	js ():
+		document.getElementById('result').textContent = "Congratulations! You Won!"
+	awaitClickBeep('#restart')
