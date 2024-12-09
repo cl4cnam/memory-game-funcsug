@@ -1,14 +1,14 @@
 # Memory Game
 
-A simple and engaging **Memory Game** built with JavaScript, HTML, and CSS. This game challenges your memory skills by asking you to match pairs of cards. It's a fun way to practice and improve your short-term memory!
+A simple **Memory Game** built with FuncSug, JavaScript, HTML, and CSS. This game challenges your memory skills by asking you to match pairs of cards. It's a fun way to practice and improve your short-term memory!
 
 ---
 
 ## 📝 Features
 
 - **Dynamic Card Matching**: Match pairs of cards to win.
-- **Responsive Design**: Play on any device, from desktops to mobile screens.
-- **Restart Option**: Restart the game at any time with a single click.
+- **Design**: Play on desktops.
+- **Restart Option**: Restart the game with a single click.
 - **Smooth Animations**: Interactive flip animation.
 
 ---
@@ -17,7 +17,8 @@ A simple and engaging **Memory Game** built with JavaScript, HTML, and CSS. This
 
 - **HTML5**: For the structure and layout.
 - **CSS3**: For styling and responsive design.
-- **JavaScript**: For game logic and interactivity.
+- **JavaScript**: For static game logic.
+- **FuncSug**: For interactivity.
 
 ---
 
@@ -25,7 +26,7 @@ A simple and engaging **Memory Game** built with JavaScript, HTML, and CSS. This
 
 1. Clone the Repository
 ```
-git clone https://github.com/your-username/memory-game.git
+git clone https://github.com/cl4cnam/memory-game-funcsug.git
 ```
 2. Navigate to the project directory:
 ```
@@ -47,5 +48,4 @@ cd memory-game
 
 ## 🔗 Links
 
-- **Live Demo**: [Memory Game](https://Jocowski.github.io/memory-game/)
-- **Repository**: [GitHub Repository](https://github.com/Jocowski/memory-game/)
+- **Live Demo**: [Memory Game](https://cl4cnam.github.io/memory-game-funcsug/)
