@@ -1,4 +1,4 @@
-This is a FuncSug re-write of the Memory Game of Jocowski.
+This is a FuncSug re-write (for illustrative purpose) of the Memory Game of Jocowski.
 
 # Memory Game
 
