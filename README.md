@@ -1,3 +1,5 @@
+This is a FuncSug re-write of the Memory Game of Jocowski.
+
 # Memory Game
 
 A simple **Memory Game** built with FuncSug, JavaScript, HTML, and CSS. This game challenges your memory skills by asking you to match pairs of cards. It's a fun way to practice and improve your short-term memory!
